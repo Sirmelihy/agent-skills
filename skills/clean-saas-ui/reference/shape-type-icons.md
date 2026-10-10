@@ -141,13 +141,14 @@ export function IconChip({ icon: Icon, color, size = "md", className }: {
 ```
 
 Color, by what the chip says: a **categorical** hue for *what kind* (§4 palette); a **status** chip for *what state*;
-an **operation** chip for *which operation* (below); **neutral** when color would mean nothing.
+an **operation** chip for *which operation* (below); the palette **in order** for *which section* of a sheet (§9.17);
+**neutral** when color would mean nothing.
 
 ### Operation colors
 
 Create, read, update and delete have one color each, everywhere in the app. Anything that stands for one of them
-takes that color: dialog and sheet headers (lg), cards that represent the operation, activity and audit entries
-(sm-md).
+takes that color: dialog headers (lg), cards that represent the operation, activity and audit entries (sm-md).
+Sheets are the exception: their title never carries a chip (§9.17).
 
 | Operation | Also called | Tone | Color | Icon (lucide) |
 |---|---|---|---|---|
@@ -161,11 +162,11 @@ takes that color: dialog and sheet headers (lg), cards that represent the operat
 - Any other operation (archive, export, duplicate, approve ...) has no fixed color. It is decision
   `operation-colors`: ask the user once and record it. Never pick its hue on your own.
 
-Where chips shine: group / section / column headers (md), dialog and sheet headers (lg), leading element of list
-rows, notifications, search results and activity items (sm-md), timeline nodes (sm), identity line of a card (sm),
-settings section headers (md), empty states (xl). Paired outcomes or participants can overlap: `flex -space-x-2`,
-each chip with `ring-2 ring-<surface tone>` (e.g. `ring-card`, `ring-panel`).
+Where chips shine: group / section / column headers and sheet sections (md), dialog headers (lg), leading element
+of list rows, notifications, search results and activity items (sm-md), timeline nodes (sm), identity line of a card
+(sm), settings section headers (md), empty states (xl). Paired outcomes or participants can overlap:
+`flex -space-x-2`, each chip with `ring-2 ring-<surface tone>` (e.g. `ring-card`, `ring-panel`).
 
-Not for: buttons and actions, navigation items, every row of a dense table (use a status dot there), decoration
-without meaning. At most one chip per item.
+Not for: buttons and actions, navigation items, a sheet's title, every row of a dense table (use a status dot
+there), decoration without meaning. At most one chip per item.
 

@@ -22,6 +22,8 @@ a question, move it into `index.md` as a decision and give it an entry; until th
   neutral chips are `bg-track` with a `text-foreground` icon (§7).
 - Create = success, read = info, update = warning, delete = danger on every chip in the app; other operations follow
   `operation-colors` (§7).
+- A sheet's title is plain text; its section headers carry `md` chips in categorical palette order by position,
+  neutral after the sixth (§9.17).
 - A delta chip is green or red by whether the change is good, not by its direction; direction comes from
   `metric-direction` (§9.12).
 - Every color signal also carries text, an icon or a shape (§2, §15).

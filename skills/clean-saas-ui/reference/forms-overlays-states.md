@@ -21,7 +21,9 @@ Part of the element catalog (§9): how an element looks when a screen uses it. L
   surfaces if grouped; pill actions right-aligned. A create, read, update or delete dialog opens with its `lg`
   operation chip above the title (§7).
 - **Sheet:** floating inset panel (§8), content on `bg-background` in stacked surfaces, sticky footer with pill actions.
-  A create or edit form in a sheet carries the same chip in its header.
+  The title is always plain text, never led by a chip. Each section is a group header (§9.8) above its surface; the
+  header's `md` chip takes the categorical palette by position (first section `CATEGORY[0]`, second `CATEGORY[1]`,
+  and so on; neutral after the sixth). The same holds for detail, create and edit sheets.
 - **Tooltip:** dark pill, one short line.
 - **Toast:** white floating surface, leading `sm` status icon chip, one line + optional action as a ghost pill.
 

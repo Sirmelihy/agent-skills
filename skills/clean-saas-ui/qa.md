@@ -16,6 +16,7 @@ Read before calling a screen done.
 - Tinted section backgrounds, colored table headers, rainbow charts, a seventh status color, a category in a status hue.
 - Icon chips on actions or navigation, several chips per item, chips in every table row; emoji as icons.
 - Soft-tinted chip fills or icons in the chip's own hue; a create, read, update or delete chip in any color but §7's.
+- A chip in a sheet's title; sheet section chips out of palette order.
 - Uppercase tracked labels, weights 700+, more than ~8 text sizes.
 - Centered text in surfaces and tables (empty states excepted).
 - Borders between every row *and* column.
@@ -33,6 +34,7 @@ Read before calling a screen done.
 - [ ] Labels gray, values dark; numbers tabular.
 - [ ] Spacing on the 4px grid, no one-off gaps.
 - [ ] Icon chips mark identity only, one per item: solid fill, black icon, one hue per category, §7 operation colors.
+- [ ] Sheets: plain title, section chips in palette order.
 - [ ] The page title is the largest text; lead numbers come second.
 
 **Decisions**

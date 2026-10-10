@@ -46,7 +46,8 @@ Reference composition:
 For columns, sections and grouped lists: `md` icon chip + label (`text-[13px] font-semibold`) + meta
 (`text-xs text-muted-foreground`, e.g. a count) in a `flex items-center gap-2.5 px-1` row. When the groups form a
 sequence (steps, stages), a connector `h-px flex-1 bg-track` runs from each header toward the next. Outcome groups
-can show a solid status badge with a count on the right instead of a chip.
+can show a solid status badge with a count on the right instead of a chip. Inside a sheet, the chips take the
+categorical palette in section order (§9.17).
 
 ### 9.9 Scores and progress
 

@@ -195,4 +195,5 @@ export const categoryColor = (index: number) => CATEGORY[index % CATEGORY.length
 - Never give a category a status-family hue (`green`, `emerald`, `yellow`, `amber`, `orange`, `red`, `rose`, `blue`,
   `sky`, `indigo`): those read as a status or an operation.
 - At most six categorical hues on one screen; beyond that, fall back to neutral chips.
+- Sheet section chips reuse the sequence by position (§9.17); that does not turn sections into categories.
 
