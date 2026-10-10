@@ -67,12 +67,12 @@ in `:root` with these, add the extra tokens, and expose them in `@theme inline` 
   --wash: rgb(0 0 0 / 0.05);       /* hover fill for ghost controls */
   --track: rgb(0 0 0 / 0.10);      /* empty progress segments, connectors, timelines */
 
-  /* Status: base = dots, bars, solid badges | soft = tinted bg | strong = text/icon on soft */
+  /* Status: base = dots, bars, solid badges, icon chips | soft = tinted bg | strong = text/icon on soft */
   --success: #22C55E;  --success-soft: #DCFCE7;  --success-strong: #15803D;
   --warning: #EAB308;  --warning-soft: #FEF9C3;  --warning-strong: #A16207;
   --caution: #F97316;  --caution-soft: #FFEDD5;  --caution-strong: #C2410C;
   --danger:  #EF4444;  --danger-soft:  #FEE2E2;  --danger-strong:  #B91C1C;
-  --info:    #14B8A6;  --info-soft:    #CCFBF1;  --info-strong:    #0F766E;
+  --info:    #3B82F6;  --info-soft:    #DBEAFE;  --info-strong:    #1D4ED8;
 
   /* Charts: monochrome first, then status hues */
   --chart-1: #0A0A0A;
@@ -148,12 +148,12 @@ If `shell = framed`, put `bg-canvas` on the body and `bg-background` on the shel
 | subtle | `bg-subtle` | Hovered rows, inner blocks |
 | hairline | `ring-1 ring-hairline` | Edge of white elements on gray (instead of borders) |
 | wash | `hover:bg-wash` | Hover on ghost controls and pills sitting on gray |
-| track | `bg-track` | Empty progress segments, connectors, timelines |
+| track | `bg-track` | Empty progress segments, connectors, timelines, neutral icon chips |
 | muted-foreground | `text-muted-foreground` | Labels, meta lines, axis ticks |
 | faint | `text-faint` | Placeholder, disabled, decorative separators |
 | primary | `bg-primary text-primary-foreground` | Primary action, active item, selection |
-| status base | `bg-success` ... | Dots, progress bars, solid badges |
-| status soft + strong | `bg-success-soft text-success-strong` | Delta chips, soft badges, status icon chips, inline alerts |
+| status base | `bg-success` ... | Dots, progress bars, solid badges, icon chips |
+| status soft + strong | `bg-success-soft text-success-strong` | Delta chips, soft badges, inline alerts |
 | border | `border-border` | Dividers *inside* surfaces, tables and forms |
 
 ### Status tones
@@ -167,27 +167,32 @@ If `shell = framed`, put `bg-canvas` on the body and `bg-background` on the shel
 | info | in progress, waiting, neutral activity |
 | neutral | draft, inactive, unknown |
 
-Map the product's own statuses onto these six. Never introduce a seventh status color.
+Map the product's own statuses onto these six. Never introduce a seventh status color. Create, read, update and
+delete chips reuse four of them (§7).
 
 ### Categorical palette
 
-Category identity (types, groups, stages, teams, channels) is not status. Use one fixed sequence of 200-300 level hues
-with a dark icon or text in the same hue. Palette classes appear only here; everything else uses tokens.
+Category identity (types, groups, stages, teams, channels) is not status. Use the fixed sequence below, with a black
+icon or text (`text-black`), the same in both themes. Its hues stay clear of the five status hues, so a category never
+reads as a state or an operation; the mixed levels keep neighbors apart. Palette classes appear only here; everything
+else uses tokens.
 
 ```ts
 // palette.ts
 export const CATEGORY = [
-  "bg-violet-200 text-violet-700",
-  "bg-lime-300 text-lime-950",
-  "bg-emerald-300 text-emerald-950",
-  "bg-yellow-300 text-yellow-950",
-  "bg-orange-300 text-orange-950",
-  "bg-sky-200 text-sky-800",
+  "bg-violet-400 text-black",
+  "bg-lime-400 text-black",
+  "bg-pink-400 text-black",
+  "bg-cyan-500 text-black",
+  "bg-fuchsia-300 text-black",
+  "bg-teal-300 text-black",
 ] as const
 
 export const categoryColor = (index: number) => CATEGORY[index % CATEGORY.length]
 ```
 
 - A category keeps the same hue everywhere in the app.
+- Never give a category a status-family hue (`green`, `emerald`, `yellow`, `amber`, `orange`, `red`, `rose`, `blue`,
+  `sky`, `indigo`): those read as a status or an operation.
 - At most six categorical hues on one screen; beyond that, fall back to neutral chips.
 

@@ -68,4 +68,5 @@ screen; beyond that, neutral chips. Record the mapping, e.g. `design=0 · engine
 ## `icon` · Entity icon (infer)
 
 One icon from the project's icon library for the entity (and one per category when categories get chips). The chip
-color follows §7: categorical for kind, status for state, neutral otherwise.
+color follows §7: categorical for kind, status for state, the operation color for create / read / update / delete,
+neutral otherwise.

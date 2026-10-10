@@ -18,10 +18,14 @@ a question, move it into `index.md` as a decision and give it an entry; until th
 - Status form follows context: dot + text in cards and dense rows, soft badge in tables, lists and detail views,
   solid badge only in group headers and final outcomes, status icon chip when the status is the item's identity
   (§9.10).
+- Colored icon chips (status, operation, category) are one solid fill with a black icon, the same in both themes;
+  neutral chips are `bg-track` with a `text-foreground` icon (§7).
+- Create = success, read = info, update = warning, delete = danger on every chip in the app; other operations follow
+  `operation-colors` (§7).
 - A delta chip is green or red by whether the change is good, not by its direction; direction comes from
   `metric-direction` (§9.12).
 - Every color signal also carries text, an icon or a shape (§2, §15).
-- A category keeps one hue everywhere; at most six hues on a screen (§4).
+- A category keeps one hue everywhere, never one from a status family; at most six hues on a screen (§4).
 - Unread is a `bg-primary` dot, never a tinted row (§9.15).
 
 ## Actions and navigation

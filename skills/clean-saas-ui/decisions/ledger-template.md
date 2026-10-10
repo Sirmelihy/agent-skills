@@ -49,6 +49,7 @@ inferred rows may be re-derived when the content changes. Replaced values move t
 | typeface | geist | default | 2026-10-02 | |
 | density | comfortable | user | 2026-10-03 | |
 | dark-mode | none | user | 2026-10-02 | |
+| operation-colors | archive=neutral · approve=success | user | 2026-10-04 | |
 
 ## Entities
 

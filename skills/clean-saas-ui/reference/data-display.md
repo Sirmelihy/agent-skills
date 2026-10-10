@@ -57,7 +57,7 @@ const config = {
 
 - List: a surface with `px-4`; rows `flex items-center gap-3 py-3 border-b border-border last:border-0`;
   leading avatar or icon chip, title + meta in the middle, trailing value, badge or chevron.
-- Activity / timeline: `sm` icon chips (status or category) on a vertical `w-px bg-track` line; event text
-  `text-[13px]` with the actor in `font-medium`; timestamp `text-xs text-muted-foreground`.
+- Activity / timeline: `sm` icon chips (status, operation or category) on a vertical `w-px bg-track` line; event
+  text `text-[13px]` with the actor in `font-medium`; timestamp `text-xs text-muted-foreground`.
 - Notifications: same as list rows; unread marked by a `size-2 rounded-full bg-primary` dot, not by a tinted row.
 

@@ -28,11 +28,12 @@ Same layering, inverted. The accent flips to near-white with black text. Alpha h
   --warning-soft: rgb(234 179 8 / 0.15);   --warning-strong: #FACC15;
   --caution-soft: rgb(249 115 22 / 0.15);  --caution-strong: #FB923C;
   --danger-soft:  rgb(239 68 68 / 0.15);   --danger-strong:  #F87171;
-  --info-soft:    rgb(20 184 166 / 0.15);  --info-strong:    #2DD4BF;
+  --info-soft:    rgb(59 130 246 / 0.15);  --info-strong:    #60A5FA;
   --chart-1: #F5F5F4;  --chart-2: #8A8A85;  --chart-3: #4A4A4E;
 }
 ```
 
-Solid status badges keep black text in both themes. Categorical chips use `dark:` variants one step darker
-(e.g. `dark:bg-violet-400/25 dark:text-violet-200`), defined in the same palette file.
+Solid status badges and colored icon chips (status, operation, category) keep their fill and their black text or
+icon in both themes, so they need no `dark:` variants. Neutral chips follow the theme through `bg-track` and
+`text-foreground`.
 

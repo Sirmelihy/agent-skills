@@ -18,8 +18,10 @@ Part of the element catalog (§9): how an element looks when a screen uses it. L
 - **Menus, popovers, selects, command palette:** `rounded-card bg-popover p-1.5 shadow-float`; items `rounded-md`,
   highlighted `bg-wash`; shortcuts as muted `Kbd`.
 - **Dialog:** `rounded-panel bg-background p-6 shadow-float`; title `text-lg font-medium tracking-tight`; content in
-  surfaces if grouped; pill actions right-aligned.
+  surfaces if grouped; pill actions right-aligned. A create, read, update or delete dialog opens with its `lg`
+  operation chip above the title (§7).
 - **Sheet:** floating inset panel (§8), content on `bg-background` in stacked surfaces, sticky footer with pill actions.
+  A create or edit form in a sheet carries the same chip in its header.
 - **Tooltip:** dark pill, one short line.
 - **Toast:** white floating surface, leading `sm` status icon chip, one line + optional action as a ghost pill.
 

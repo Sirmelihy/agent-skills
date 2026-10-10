@@ -79,12 +79,17 @@ Icons come in three treatments. Pick by role, not by taste.
 |---|---|---|
 | **Plain icon** | Actions, controls, navigation, inline hints | Monochrome `currentColor`, 14 / 16 / 18px, default stroke |
 | **Icon button** | Icon-only actions | Plain icon centered in a circle: `size-10 rounded-full bg-card ring-1 ring-hairline hover:bg-accent` (`size-8`, `size-7` for smaller) |
-| **Icon chip** | Identity: what kind of thing this is | Round tinted background with a dark icon (below) |
+| **Icon chip** | Identity: what kind of thing, state or operation this is | Solid colored circle with a black icon (below) |
 
 ### Icon chip (signature element)
 
-A circle filled with a soft hue and a darker icon in the same hue family. It gives an item an identity at a glance
-and is one of the most recognizable details of this style.
+A circle filled with one solid, vivid color and a black icon on it. It gives an item an identity at a glance and is
+one of the most recognizable details of this style.
+
+- **Fill:** one flat, opaque color. No soft tint, no transparency, no gradient, no ring in the same hue.
+- **Icon:** black (`text-black`) on every colored chip, in both themes, unless the user asks otherwise. Never an icon
+  in the chip's own hue.
+- **Neutral chip:** no hue. `bg-track` with a `text-foreground` icon, so it follows the theme.
 
 ```tsx
 // icon-chip.tsx
@@ -99,17 +104,26 @@ const SIZE = {
 } as const
 
 export const STATUS_CHIP: Record<StatusTone, string> = {
-  success: "bg-success-soft text-success-strong",
-  warning: "bg-warning-soft text-warning-strong",
-  caution: "bg-caution-soft text-caution-strong",
-  danger: "bg-danger-soft text-danger-strong",
-  info: "bg-info-soft text-info-strong",
-  neutral: "bg-wash text-muted-foreground",
+  success: "bg-success text-black",
+  warning: "bg-warning text-black",
+  caution: "bg-caution text-black",
+  danger: "bg-danger text-black",
+  info: "bg-info text-black",
+  neutral: "bg-track text-foreground",
+}
+
+export type Operation = "create" | "read" | "update" | "delete"
+
+export const OPERATION_CHIP: Record<Operation, string> = {
+  create: STATUS_CHIP.success,
+  read: STATUS_CHIP.info,
+  update: STATUS_CHIP.warning,
+  delete: STATUS_CHIP.danger,
 }
 
 export function IconChip({ icon: Icon, color, size = "md", className }: {
   icon: React.ElementType                 // any icon component
-  color?: string                          // categoryColor(i), STATUS_CHIP[tone]; neutral if omitted
+  color?: string                          // STATUS_CHIP[tone], OPERATION_CHIP[op], categoryColor(i); neutral if omitted
   size?: keyof typeof SIZE
   className?: string
 }) {
@@ -117,7 +131,7 @@ export function IconChip({ icon: Icon, color, size = "md", className }: {
     <span className={cn(
       "grid shrink-0 place-items-center rounded-full",
       SIZE[size],
-      color ?? "bg-card text-foreground ring-1 ring-hairline",
+      color ?? STATUS_CHIP.neutral,
       className
     )}>
       <Icon aria-hidden />
@@ -126,13 +140,31 @@ export function IconChip({ icon: Icon, color, size = "md", className }: {
 }
 ```
 
-Color: a **categorical** hue when the chip says *what kind* (§4 palette); a **status** chip when it says *what state*;
-**neutral** (white with hairline, or `bg-wash`) when color would mean nothing.
+Color, by what the chip says: a **categorical** hue for *what kind* (§4 palette); a **status** chip for *what state*;
+an **operation** chip for *which operation* (below); **neutral** when color would mean nothing.
 
-Where chips shine: group / section / column headers (md), leading element of list rows, notifications, search results
-and activity items (sm-md), timeline nodes (sm), identity line of a card (sm), settings section headers (md),
-empty states (xl). Paired outcomes or participants can overlap: `flex -space-x-2`, each chip with
-`ring-2 ring-<surface tone>` (e.g. `ring-card`, `ring-panel`).
+### Operation colors
+
+Create, read, update and delete have one color each, everywhere in the app. Anything that stands for one of them
+takes that color: dialog and sheet headers (lg), cards that represent the operation, activity and audit entries
+(sm-md).
+
+| Operation | Also called | Tone | Color | Icon (lucide) |
+|---|---|---|---|---|
+| create | add, new | success | green | `plus` |
+| read | get, view, details | info | blue | `eye` |
+| update | edit, rename | warning | yellow-amber | `pencil` |
+| delete | remove | danger | red | `trash-2` |
+
+- The chip marks the dialog, card or event, never the button that runs the operation. Buttons keep §9.4: black
+  primary, red-text destructive, solid red only inside a confirmation dialog.
+- Any other operation (archive, export, duplicate, approve ...) has no fixed color. It is decision
+  `operation-colors`: ask the user once and record it. Never pick its hue on your own.
+
+Where chips shine: group / section / column headers (md), dialog and sheet headers (lg), leading element of list
+rows, notifications, search results and activity items (sm-md), timeline nodes (sm), identity line of a card (sm),
+settings section headers (md), empty states (xl). Paired outcomes or participants can overlap: `flex -space-x-2`,
+each chip with `ring-2 ring-<surface tone>` (e.g. `ring-card`, `ring-panel`).
 
 Not for: buttons and actions, navigation items, every row of a dense table (use a status dot there), decoration
 without meaning. At most one chip per item.

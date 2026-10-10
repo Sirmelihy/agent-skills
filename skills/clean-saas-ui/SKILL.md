@@ -1,6 +1,6 @@
 ---
 name: clean-saas-ui
-description: Decision-driven visual design language for clean, modern SaaS product UI on shadcn/ui + Tailwind v4, in any React setup (Vite, Next.js, React Router, TanStack). Before building, it asks the user the structural and product decisions the task needs (app shell, navigation, detail views, screen patterns, ...), records them in design-decisions.md at the project root and never asks a recorded one again. Look - tonal gray layers instead of shadows, white rounded surfaces, pill controls, black accents, color only for meaning, round tinted icon chips. Use when building or restyling any app interface, or when asked for a clean / minimal / shadcn-style / Linear-style look.
+description: Decision-driven visual design language for clean, modern SaaS product UI on shadcn/ui + Tailwind v4, in any React setup (Vite, Next.js, React Router, TanStack). Before building, it asks the user the structural and product decisions the task needs (app shell, navigation, detail views, screen patterns, ...), records them in design-decisions.md at the project root and never asks a recorded one again. Look - tonal gray layers instead of shadows, white rounded surfaces, pill controls, black accents, color only for meaning, round solid icon chips with black icons. Use when building or restyling any app interface, or when asked for a clean / minimal / shadcn-style / Linear-style look.
 ---
 
 # Clean SaaS UI
@@ -71,7 +71,8 @@ Calm, neutral, tactile, precise. The interface steps back so the content and its
 - **Depth by tone.** Layers are distinguished by slightly different grays, not by shadows or heavy borders.
 - **Black as accent.** The strongest emphasis is solid near-black: the primary action, the active item, the selection.
 - **Dense but breathable.** A lot of information per screen, organized by spacing and grouping rather than lines.
-- **Small delights.** Round tinted icon chips, segmented progress bars, overlapping chips, mono IDs, tabular numbers.
+- **Small delights.** Round solid icon chips with black icons, segmented progress bars, overlapping chips, mono IDs,
+  tabular numbers.
 
 ## 2. Principles
 

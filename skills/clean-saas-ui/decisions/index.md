@@ -25,6 +25,7 @@ The control panel of this skill: every decision it knows, with scope, type and t
 | `dark-mode` | ask | first UI task | – | project.md |
 | `wayfinding` | ask | first detail or nested page | – | project.md |
 | `content-domain` | ask | first UI task | no real product content in the request or the codebase | project.md |
+| `operation-colors` | ask | an operation other than create / read / update / delete first gets a chip | – | project.md |
 | `state-location` | infer | first filter or view switch | – | project.md |
 
 ## Entity

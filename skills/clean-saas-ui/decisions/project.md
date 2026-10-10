@@ -95,6 +95,17 @@ Only when neither the request nor the codebase gives product content.
 Offer 2–3 coherent domains that fit the request's wording (for example: B2B invoicing, support desk, hiring
 pipeline), each in a few words. **Recommend:** the one closest to the request. **Look:** §12.
 
+## `operation-colors` · Colors for other operations
+
+Create, read, update and delete have fixed colors (§7). This decision covers every other operation that gets a chip:
+archive, export, duplicate, approve and so on. Record one mapping per operation in the same row, e.g.
+`archive=neutral · approve=success · export=info`. An operation the row does not list yet opens it again.
+
+Options per operation: one of the six status tones (`success`, `warning`, `caution`, `danger`, `info`, `neutral`).
+
+**Recommend:** `neutral`, unless the operation's outcome clearly matches a tone (approve → success, reject → danger).
+**Look:** §7 (operation colors).
+
 ## `state-location` · Where filter and view state lives (infer)
 
 - `url`: search params, when the router supports it and the screen is meant to be real.
