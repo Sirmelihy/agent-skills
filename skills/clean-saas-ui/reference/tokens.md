@@ -73,6 +73,7 @@ in `:root` with these, add the extra tokens, and expose them in `@theme inline` 
   --caution: #F97316;  --caution-soft: #FFEDD5;  --caution-strong: #C2410C;
   --danger:  #EF4444;  --danger-soft:  #FEE2E2;  --danger-strong:  #B91C1C;
   --info:    #3B82F6;  --info-soft:    #DBEAFE;  --info-strong:    #1D4ED8;
+  --danger-solid: #DC2626;         /* confirm button of a confirmation dialog, same in both themes */
 
   /* Charts: monochrome first, then status hues */
   --chart-1: #0A0A0A;
@@ -105,6 +106,7 @@ in `:root` with these, add the extra tokens, and expose them in `@theme inline` 
   --color-danger: var(--danger);
   --color-danger-soft: var(--danger-soft);
   --color-danger-strong: var(--danger-strong);
+  --color-danger-solid: var(--danger-solid);
   --color-info: var(--info);
   --color-info-soft: var(--info-soft);
   --color-info-strong: var(--info-strong);
@@ -188,7 +190,8 @@ export const CATEGORY = [
   "bg-teal-300 text-black",
 ] as const
 
-export const categoryColor = (index: number) => CATEGORY[index % CATEGORY.length]
+// Past the sixth hue there is no category color; IconChip then falls back to neutral (§7)
+export const categoryColor = (index: number) => (index < CATEGORY.length ? CATEGORY[index] : undefined)
 ```
 
 - A category keeps the same hue everywhere in the app.

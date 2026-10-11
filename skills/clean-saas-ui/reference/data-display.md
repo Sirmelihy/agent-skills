@@ -48,7 +48,7 @@ const config = {
   text-muted-foreground`, no header borders.
 - Rows `h-14`, `border-border/70` between rows, `hover:bg-subtle`. No zebra stripes, no vertical borders.
 - First column two-line: primary (`text-[13px] font-medium`) + meta (`text-xs text-muted-foreground`), optionally led
-  by an avatar or `sm` icon chip.
+  by an avatar or an `sm` category chip that says what kind the row is (`gap-3`). Never a status chip in a row.
 - Numbers right-aligned and tabular. Status as soft badge or dot + text. Scores as number + 5-segment bar.
 - Row actions appear on hover (`opacity-0 group-hover:opacity-100`), stay focusable.
 - Sticky header for long tables; pagination as small pills with a muted "1-20 of N" range.

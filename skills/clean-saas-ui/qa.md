@@ -14,7 +14,7 @@ Read before calling a screen done.
 - Default shadcn Card used as-is (border + shadow + large padding).
 - Small radii (≤ 6px) on containers, or mixed radius languages.
 - Tinted section backgrounds, colored table headers, rainbow charts, a seventh status color, a category in a status hue.
-- Icon chips on actions or navigation, several chips per item, chips in every table row; emoji as icons.
+- Icon chips on actions or navigation, several chips per item, a status chip in a table row; emoji as icons.
 - Soft-tinted chip fills or icons in the chip's own hue; a create, read, update or delete chip in any color but §7's.
 - A chip in a sheet's title; sheet section chips out of palette order.
 - Uppercase tracked labels, weights 700+, more than ~8 text sizes.

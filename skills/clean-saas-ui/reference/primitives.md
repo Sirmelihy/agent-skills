@@ -14,8 +14,8 @@ Restyle only the primitives the project uses.
 - `outline`: `bg-transparent ring-1 ring-border hover:bg-wash` (no border)
 - `ghost`: `hover:bg-wash`
 - `destructive`: `bg-card text-danger-strong ring-1 ring-hairline hover:bg-danger-soft`
-- `destructive-solid` (add it): `bg-red-600 text-white hover:bg-red-700`, the same in both themes. Only for the
-  confirm button of a confirmation dialog.
+- `destructive-solid` (add it): `bg-danger-solid text-white hover:bg-danger-solid/90`, the same in both themes.
+  Only for the confirm button of a confirmation dialog.
 - Sizes (add any that are missing): `default h-10 px-4 text-sm`, `sm h-8 px-3 text-[13px]`, `lg h-11 px-5 text-sm`,
   `icon size-10`, `icon-sm size-8`, `icon-xs size-7`. SVG inside: `size-4` (`size-3.5` for xs).
 

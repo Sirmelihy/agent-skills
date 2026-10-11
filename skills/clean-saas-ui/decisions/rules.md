@@ -16,8 +16,8 @@ a question, move it into `index.md` as a decision and give it an entry; until th
 
 - Six status tones, never a seventh (§4).
 - Status form follows context: dot + text in cards and dense rows, soft badge in tables, lists and detail views,
-  solid badge only in group headers and final outcomes, status icon chip when the status is the item's identity
-  (§9.10).
+  solid badge only in group headers and final outcomes, status icon chip when the status is the item's identity,
+  never in a table row (§9.10, §9.14).
 - Colored icon chips (status, operation, category) are one solid fill with a black icon, the same in both themes;
   neutral chips are `bg-track` with a `text-foreground` icon (§7).
 - Create = success, read = info, update = warning, delete = danger on every chip in the app; other operations follow

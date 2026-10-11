@@ -71,7 +71,7 @@ with a `size-9` avatar, name `text-sm font-medium`, 16px chevron.
 
 - Hierarchy per region: one **primary** (black pill), any number of **secondary** (white pills), **ghost** for
   low-emphasis and toolbar actions, **destructive** as a red-text secondary pill. Solid red only for the confirm
-  button of a confirmation dialog: `destructive-solid` (`bg-red-600 text-white`, §8).
+  button of a confirmation dialog: `destructive-solid` (`bg-danger-solid text-white`, §8).
 - Icon + label: 16px icon left of the label, gap 6-8px. Icon-only: circle with `aria-label`.
 - Corner action on a surface (open, expand): `size-7 rounded-full ring-1 ring-hairline hover:bg-wash` with a 14px
   arrow-up-right icon, top-right of the surface.

@@ -167,6 +167,7 @@ of list rows, notifications, search results and activity items (sm-md), timeline
 (sm), settings section headers (md), empty states (xl). Paired outcomes or participants can overlap:
 `flex -space-x-2`, each chip with `ring-2 ring-<surface tone>` (e.g. `ring-card`, `ring-panel`).
 
-Not for: buttons and actions, navigation items, a sheet's title, every row of a dense table (use a status dot
-there), decoration without meaning. At most one chip per item.
+Not for: buttons and actions, navigation items, a sheet's title, status in a table row (use a soft badge or a dot
+there), decoration without meaning. A table's first column may lead with an `sm` category chip that says what kind
+each row is (§9.14). At most one chip per item; the only exception is an overlapping pair (above).
 
