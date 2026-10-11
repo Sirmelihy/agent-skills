@@ -18,8 +18,9 @@ Part of the element catalog (§9): how an element looks when a screen uses it. L
 - **Menus, popovers, selects, command palette:** `rounded-card bg-popover p-1.5 shadow-float`; items `rounded-md`,
   highlighted `bg-wash`; shortcuts as muted `Kbd`.
 - **Dialog:** `rounded-panel bg-background p-6 shadow-float`; title `text-lg font-medium tracking-tight`; content in
-  surfaces if grouped; pill actions right-aligned. A create, read, update or delete dialog opens with its `lg`
-  operation chip above the title (§7).
+  surfaces if grouped; pill actions right-aligned. A create, read, update or delete dialog puts its `lg` operation
+  chip (§7) and the title on one row (`flex items-center gap-3`), not above it; the description goes below both,
+  left-aligned with the chip.
 - **Sheet:** floating inset panel (§8), content on `bg-background` in stacked surfaces, sticky footer with pill actions.
   The title is always plain text, never led by a chip. Each section is a group header (§9.8) above its surface; the
   header's `md` chip takes the categorical palette by position (first section `CATEGORY[0]`, second `CATEGORY[1]`,
